@@ -9,7 +9,7 @@ class ApiServlet extends JsonServlet {
   get("/ping")        { Map("message"  -> "pong") }
 
   get("/article")     { Map("article"  -> service.extract(params("url"))) }
-
+/*
   get("/articles")     { 
   	val response = List()
   	params("urls").foreach(
@@ -18,7 +18,7 @@ class ApiServlet extends JsonServlet {
 
   	Map("articles"  -> response) 
   }
-
+*/
   post("/entities")   { Map("entities" -> service.entities.classify(params("text"))) }
 
 }
