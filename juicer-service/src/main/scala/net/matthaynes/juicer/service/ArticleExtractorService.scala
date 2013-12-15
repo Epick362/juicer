@@ -28,7 +28,7 @@ class ArticleExtractorService {
     }
 
     // Don't want this disabled thanks
-    //com.gravity.goose.network.HtmlFetcher.getHttpClient.getParams.setParameter("http.connection.stalecheck", true)
+    com.gravity.goose.network.HtmlFetcher.getHttpClient.getParams.setParameter("http.connection.stalecheck", true)
 
   }
 
