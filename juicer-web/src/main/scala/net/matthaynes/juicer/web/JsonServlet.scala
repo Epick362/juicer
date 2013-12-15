@@ -2,11 +2,12 @@ package net.matthaynes.juicer.web
 
 import net.matthaynes.juicer.service._
 import org.scalatra._
+import org.scalatra.CorsSupport
 import net.liftweb.json._
 import net.liftweb.json.Serialization.{write}
 import net.liftweb.json.Xml.{toJson, toXml}
 
-trait JsonServlet extends ScalatraServlet {
+trait JsonServlet extends ScalatraServlet with CorsSupport {
 
   implicit val formats = new Formats {
     val dateFormat = DefaultFormats.lossless.dateFormat
@@ -26,7 +27,6 @@ trait JsonServlet extends ScalatraServlet {
 
   before() {
     contentType = "application/json"
-    response.setHeader("Access-Control-Allow-Origin", "*")
   }
 
   notFound {
