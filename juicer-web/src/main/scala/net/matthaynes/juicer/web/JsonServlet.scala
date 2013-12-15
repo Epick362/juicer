@@ -15,7 +15,6 @@ trait JsonServlet extends ScalatraServlet {
   }
 
   override protected def renderResponseBody(actionResult: Any) {
-    response.setHeader("Access-Control-Allow-Origin", "*")
     super.renderResponseBody(write(actionResult.asInstanceOf[AnyRef]))
   }
 
@@ -27,6 +26,7 @@ trait JsonServlet extends ScalatraServlet {
 
   before() {
     contentType = "application/json"
+    response.setHeader("Access-Control-Allow-Origin", "*")
   }
 
   notFound {
