@@ -9,7 +9,7 @@ import scala.util.matching.Regex
 case class Image(src: String, width: Int, height: Int)
 
 case class Article(url: String, domain: String, hash: String, title: String, description: String,
-  body: String, image: Option[Image], additionalData: Option[scala.collection.Map[String, String]], entities: List[NamedEntity])
+  body: String, image: Option[Image], additionalData: Option[scala.collection.Map[String, String]])
 
 class ArticleExtractorService {
 
