@@ -34,8 +34,6 @@ class ArticleExtractorService {
 
   val goose    = new Goose(config)
 
-  val entities = new NamedEntityService
-
   def extract(url : String) : Article = {
 
     val article  = goose.extractContent(url)
@@ -54,7 +52,7 @@ class ArticleExtractorService {
     }
 
     new Article(article.canonicalLink, article.domain, article.linkhash, article.title,
-      article.metaDescription, article.cleanedArticleText, image, additionalData, entities.classify(text))
+      article.metaDescription, article.cleanedArticleText, image, additionalData)
 
   }
 
